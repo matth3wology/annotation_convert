@@ -2,6 +2,11 @@ from xml.dom import minidom
 import math
 import os
 
+#Annotation folder containing XML : convert to .txt and save in image folder.
+annotation_folder = "annotations"
+image_folder = "image"
+
+#Convert XML to txt function
 def convert(input_path):
     class_id = 0
     xmldoc = minidom.parse(input_path)
@@ -22,13 +27,21 @@ def convert(input_path):
 
     return("{} {} {} {}".format(class_id,mid_point_x,mid_point_y,box_width,box_height))
 
-annotation_folder = "annotations"
-image_folder = "image"
-files = os.listdir(annotation_folder)
 
-for i in files:
-    path = "{}/{}".format(folder,i)
-    save_path = "{}/{}".format(training_folder,i.replace('.xml','.txt'))
-    f = open(save_path,'w')
-    f.write(convert(path))
-    f.close()
+def main():
+    files = os.listdir(annotation_folder)
+
+    print("Starting Conversion..")
+    
+    for i in files:
+        path = "{}/{}".format(folder,i)
+        save_path = "{}/{}".format(training_folder,i.replace('.xml','.txt'))
+        f = open(save_path,'w')
+        f.write(convert(path))
+        f.close()
+        
+     print("Conversion finished.")
+
+    
+ if __name__ == "__main__":
+    madin()
