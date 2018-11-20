@@ -2,7 +2,7 @@
 # Annotation Converter
 ![](https://static.rectlabel.com/waysify_app/img/appicon48.png)
 
-Convert RectLabel XML data to YOLOV3 format.
+Convert [RectLabel](https://rectlabel.com) XML data to [YOLOV3](https://pjreddie.com/darknet/yolo) format.
 
 ### Structure
 Folder structure should looke like this:
