@@ -2,6 +2,15 @@ from xml.dom import minidom
 import math
 import os
 
+from absl import flags
+from absl import app
+
+
+flags.DEFINE_string('annotation_folder','annotations','Select the folder containing annotation xml files.')
+flags.DEFINE_string('image_folder','images','Select the folder containing image files.')
+
+FLAGS = flags.FLAGS
+
 #Annotation folder containing XML : convert to .txt and save in image folder.
 annotation_folder = "annotations"
 image_folder = "image"
@@ -27,7 +36,6 @@ def convert(input_path):
 
     return("{} {} {} {}".format(class_id,mid_point_x,mid_point_y,box_width,box_height))
 
-
 def main():
     files = os.listdir(annotation_folder)
 
@@ -41,7 +49,6 @@ def main():
         f.close()
         
      print("Conversion finished.")
-
     
  if __name__ == "__main__":
-    madin()
+    app.run(main)
