@@ -2,7 +2,7 @@
 # Annotation Converter
 ![](https://static.rectlabel.com/waysify_app/img/appicon48.png)
 
-Convert [RectLabel](https://rectlabel.com) XML data to [YOLOV3](https://pjreddie.com/darknet/yolo) format.
+Convert [RectLabel](https://rectlabel.com) XML data to [YOLOV3](https://pjreddie.com/darknet/yolo) format. Currently only set for one class.
 
 ### Structure
 Folder structure should looke like this:
@@ -38,4 +38,4 @@ Conversion should have .txt files for each image:
 
 ### To Do:
 
-Not much todo. I think I will want to automate the seperation of training and validation. Hmm..will work on repo later.
+Not much todo. I think I will want to automate the seperation of training and validation. Also need to convert multiple classes since currently only one. Hmm..will work on repo later.
